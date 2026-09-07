@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "linkedin-jobs": {
+      "type": "http",
+      "url": "https://shahidirfan--linkedin-jobs-mcp-server.apify.actor/mcp?token=${APIFY_API_TOKEN}"
+    },
+    "linkedin-jobs-advanced": {
+      "type": "http",
+      "url": "https://mcp.apify.com/?tools=curious_coder/linkedin-jobs-search-scraper&token=${APIFY_API_TOKEN}"
+    }
+  }
+}
