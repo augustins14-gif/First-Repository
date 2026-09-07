@@ -73,7 +73,7 @@ This repo also wires up the [LinkedIn Jobs MCP Server](https://apify.com/shahidi
    export APIFY_API_TOKEN=<your-apify-token>
    ```
 
-3. The server is already registered for this project in [`.mcp.json`](./.mcp.json):
+3. Both servers are already registered for this project in [`.mcp.json`](./.mcp.json):
 
    ```json
    {
@@ -81,13 +81,21 @@ This repo also wires up the [LinkedIn Jobs MCP Server](https://apify.com/shahidi
        "linkedin-jobs": {
          "type": "http",
          "url": "https://shahidirfan--linkedin-jobs-mcp-server.apify.actor/mcp?token=${APIFY_API_TOKEN}"
+       },
+       "linkedin-jobs-advanced": {
+         "type": "http",
+         "url": "https://mcp.apify.com/?tools=curious_coder/linkedin-jobs-search-scraper&token=${APIFY_API_TOKEN}"
        }
      }
    }
    ```
 
-   Claude Code picks this up automatically for the project once `APIFY_API_TOKEN` is set. For Claude Desktop or other clients, copy the same `mcpServers` entry into their config file, substituting your token directly if the client doesn't support `${VAR}` expansion.
+   Claude Code picks these up automatically for the project once `APIFY_API_TOKEN` is set. For Claude Desktop or other clients, copy the same `mcpServers` entries into their config file, substituting your token directly if the client doesn't support `${VAR}` expansion.
 
 ### Use
 
 Once connected, ask your MCP client to search LinkedIn jobs in natural language (e.g. "find remote senior backend engineer roles posted this week"); the client calls the actor's MCP tools to fetch and filter live listings.
+
+### `linkedin-jobs-advanced`
+
+[Advanced Linkedin Job Scraper](https://apify.com/curious_coder/linkedin-jobs-search-scraper) (`curious_coder/linkedin-jobs-search-scraper`) is a second Apify Actor for LinkedIn job search, wired up via Apify's universal MCP gateway ([`mcp.apify.com`](https://mcp.apify.com)) rather than a dedicated MCP actor. The `tools=` query param pins the gateway to just this actor. It uses the same `APIFY_API_TOKEN` as `linkedin-jobs` above — no separate setup needed — but runs are billed separately per the actor's own pricing on your Apify account.
