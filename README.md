@@ -59,3 +59,35 @@ Key command groups:
 | `admin` | Manage subscription, accounts, and limits |
 
 Run `linkedin <topic> --help` for the commands available under each topic.
+
+## Apify LinkedIn Jobs MCP Server
+
+This repo also wires up the [LinkedIn Jobs MCP Server](https://apify.com/shahidirfan/linkedin-jobs-mcp-server) — an Apify Actor that exposes LinkedIn job search (title, location, remote/experience filters, salary, etc.) as MCP tools, so any MCP client (Claude Code, Claude Desktop, ...) can query live LinkedIn job postings.
+
+### Configure
+
+1. Get an API token from your [Apify Console](https://console.apify.com/settings/integrations) account (the actor's free tier includes a limited number of searches/month; usage beyond that is billed through your Apify account).
+2. Export it as an environment variable before starting your MCP client:
+
+   ```bash
+   export APIFY_API_TOKEN=<your-apify-token>
+   ```
+
+3. The server is already registered for this project in [`.mcp.json`](./.mcp.json):
+
+   ```json
+   {
+     "mcpServers": {
+       "linkedin-jobs": {
+         "type": "http",
+         "url": "https://shahidirfan--linkedin-jobs-mcp-server.apify.actor/mcp?token=${APIFY_API_TOKEN}"
+       }
+     }
+   }
+   ```
+
+   Claude Code picks this up automatically for the project once `APIFY_API_TOKEN` is set. For Claude Desktop or other clients, copy the same `mcpServers` entry into their config file, substituting your token directly if the client doesn't support `${VAR}` expansion.
+
+### Use
+
+Once connected, ask your MCP client to search LinkedIn jobs in natural language (e.g. "find remote senior backend engineer roles posted this week"); the client calls the actor's MCP tools to fetch and filter live listings.
