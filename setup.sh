@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
-# Installs the @linkedapi/linkedin-cli npm package globally.
+# Installs the CLI npm packages documented in this repo globally:
+#   - @linkedapi/linkedin-cli
+#   - @p1va/ashby
 #
 # Usage:
 #   ./setup.sh
 #
-# After installation, authenticate with:
-#   linkedin setup
-# or non-interactively:
-#   linkedin setup --linked-api-token=<token> --identification-token=<token>
+# After installation:
+#   linkedin setup                     # authenticate the LinkedIn CLI
+#   ashby <company-slug-or-board-url>  # browse a company's Ashby job board
 
 set -euo pipefail
 
-PACKAGE="@linkedapi/linkedin-cli"
+PACKAGES=(
+  "@linkedapi/linkedin-cli"
+  "@p1va/ashby"
+)
 
 if ! command -v npm >/dev/null 2>&1; then
   echo "Error: npm is required but was not found on PATH." >&2
@@ -19,9 +23,12 @@ if ! command -v npm >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "Installing ${PACKAGE} globally..."
-npm install -g "${PACKAGE}"
+for package in "${PACKAGES[@]}"; do
+  echo "Installing ${package} globally..."
+  npm install -g "${package}"
+done
 
 echo
-echo "Installed. Verify with: linkedin --version"
-echo "Next, authenticate with: linkedin setup"
+echo "Installed. Verify with: linkedin --version && ashby --version"
+echo "Next, authenticate the LinkedIn CLI with: linkedin setup"
+echo "And list jobs on an Ashby board with: ashby <company-slug>"
