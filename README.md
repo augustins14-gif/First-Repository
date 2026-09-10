@@ -106,3 +106,13 @@ Output is human-readable markdown by default. Pass `--json` for machine-parseabl
 ```bash
 ashby lovable --json | jq .
 ```
+
+### Network access
+
+`ashby` queries Ashby's GraphQL API at `jobs.ashbyhq.com`. In sandboxed or network-restricted environments (e.g. locked-down CI runners or agent sandboxes with an egress allowlist), commands will fail with a `403` unless that host is explicitly allowed:
+
+```
+Error: GraphQL Error (Code: 403): {"response":{"status":403, ... "body":"Host not in allowlist: jobs.ashbyhq.com. Add this host to your network egress settings to allow access."}}}
+```
+
+Add `jobs.ashbyhq.com` to the environment's egress allowlist to resolve this.
