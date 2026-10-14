@@ -22,7 +22,7 @@ I paste job postings or recruiter messages with no instruction. You run the pipe
    - Run `./build.sh <slug>`. If Resume pages is not 1, spawn `resume-writer` again with the instruction "remove the least relevant bullet", then rebuild.
    - Spawn `fact-verifier` (Haiku) on the two JSON files. Any unverified claim goes back to the writer.
    - Look at jobs/<slug>/r-1.jpg to confirm layout.
-6. **Deliver.** Copy Resume.docx and CoverLetter.docx to outputs/ with names Sebastien_Augustin_<Company>_<Role>_Resume.docx and _CoverLetter.docx. Append a row to tracker.csv. Tell me the files in one line.
+6. **Deliver.** Always send the two DOCX files to me as download attachments with SendUserFile (display attach) so I get download links. Copy Resume.docx and CoverLetter.docx to outputs/ with names Sebastien_Augustin_<Company>_<Role>_Resume.docx and _CoverLetter.docx. Append a row to tracker.csv. Tell me the files in one line.
 7. **Recruiter messages.** Spawn `recruiter-responder` (Sonnet). It drafts a short conversational reply asking for company, base pay, full time vs contract, and remote or hybrid NYC if missing. Do not ask whether the role is individual contributor if the posting or message already implies it, and never ask it of a recruiter who already said it.
 8. **Job sweeps.** When I ask for new jobs, spawn `job-scout` (Haiku) which uses the job board connectors and returns at most 10 candidate rows (title, company, pay, link). Screen each through step 3.
 
