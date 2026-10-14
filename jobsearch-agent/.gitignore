@@ -1,0 +1,9 @@
+# Personal data stays local; this repo is public.
+facts/
+archive/
+examples/
+outputs/
+tracker.csv
+# Per-posting build output (keep the schema example)
+jobs/*
+!jobs/_example/

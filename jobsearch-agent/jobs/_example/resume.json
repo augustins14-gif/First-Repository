@@ -1,0 +1,55 @@
+{
+  "title": "Product Management — Roadmap Sequencing, Launch Delivery, Triage & Incident Follow-Through, Instrumentation",
+  "summary": "Product and operations professional with 4+ years in healthcare technology, most recently at SafelyYou, a healthcare AI company, plus complex client support and operations work at JLL Technologies. Owns the week-to-week rhythm that turns engineering into shipped product: ran a phased launch of a new escalation-management product across roughly 20 community groups with defined cohorts, readiness reviews, and GA criteria; triages inbound bugs, customer asks, and integration issues and routes them to the right owner; investigated duplicate-resident records to root cause and scoped the fix with Engineering; and tracks EHR integration risk across Yardi, PCC, and August Health. Built the Looker and Retool dashboards leadership uses weekly, with the metric definitions behind them, and built Salesforce and Retool MCP server configurations and a Claude Code skill with PHI guardrails to remove manual work. Honest notes: I have not held a formal Product Manager title, I have not owned a roadmap end to end, and my data work has been dashboards and metric definitions rather than event-level analytics or SQL.",
+  "safelyyou": [
+    "Owned launch delivery for a new escalation-management product: defined customer cohorts, phase definitions, pre-go-live checklists, and GA criteria, ran readiness reviews with Product, Engineering, Support, and Implementation, and moved ~20 community groups from pilot to new-customer default onboarding.",
+    "Led the go/no-go assessment for a firmware deployment on an eCall hardware device with a SaaS component, a life safety system where a bad release carries real risk; validated alert workflows end to end, narrowed field validation from 9 layouts to 6 high-value configurations, and fed lessons from each cohort into the next launch.",
+    "Fed external stakeholder input into roadmap discussions, routing customer feedback from CSAT scores and from Customer Success and Account Managers in the field to Product; separately traced duplicate-resident issues hitting support, billing, and reporting to root cause and scoped a resident-record merge solution with Engineering.",
+    "Built the Looker adoption dashboards leadership uses weekly, capturing product metrics across all product lines over the past year and how each product permutation performed, giving Product and leadership data to shape product packaging; wrote the metric definitions, report logic, and dashboard requirements for data and engineering partners.",
+    "Managed cross-team dependencies and risk on the EHR integration pipeline (go-lives, addendums, delays, support routing) across Yardi, PCC, and August Health, working with third parties and Engineering to close open items before launch.",
+    "Built a new transitions and decommissions function for a 25-community customer, mapping the workflow across Supply Chain, Implementation, Support, Product, CSMs, and Sales, and consolidated four fragmented SOPs into one standardized track with documented risk areas and GA criteria; held owners to timelines with no reporting line to any of them.",
+    "Built Salesforce and Retool MCP server configurations and a Claude Code skill with PHI guardrails to remove manual operational work; owned a LaunchDarkly and Retool demo environment for Discover, SafelyYou's client-facing product portal."
+  ],
+  "jll_support": [
+    "Owned complex technical support cases end to end, reducing resolution time 25% through structured triage, root-cause analysis, and clearer reproduction steps; translated user-reported issues into precise user stories and bug reports in Azure DevOps, contributing to a 15% increase in sprint completion rates.",
+    "Built onboarding content, process flows, and knowledge-base documentation that cut repeat support inquiries 30%; led communications around product changes and rollouts, lifting customer adoption and CSAT by 20%."
+  ],
+  "jll_ops": [
+    "Led cross-functional transformation initiatives using capacity modeling and bottleneck analysis, achieving a 20% improvement in operational efficiency and a 15% reduction in project completion times; streamlined Workfront user setup and onboarding, reducing onboarding time 25%."
+  ],
+  "google": [
+    "Monitored and analyzed product feedback across multiple support channels for trends and insights, escalating issues to product teams; worked cross-functionally with Sales, Marketing, and Product on data integrity — improved user satisfaction scores 25% and cut response times 30%."
+  ],
+  "skills": [
+    {
+      "label": "Product Delivery",
+      "items": [
+        "Roadmap sequencing & scoping",
+        "Triage & incident follow-through",
+        "Launch & go-live readiness",
+        "Metric definitions & requirements",
+        "Cross-functional alignment"
+      ]
+    },
+    {
+      "label": "Data & AI Tooling",
+      "items": [
+        "Looker & Retool dashboards",
+        "Claude / MCP server configuration",
+        "EHR integration tracking (Yardi, PCC, August Health)"
+      ]
+    },
+    {
+      "label": "Tools",
+      "items": [
+        "Jira",
+        "Azure DevOps",
+        "Workfront",
+        "Salesforce",
+        "LaunchDarkly",
+        "Retool",
+        "Looker"
+      ]
+    }
+  ]
+}
